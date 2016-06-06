@@ -15,12 +15,11 @@
 * ng-model @All field form and show data form with form Expression.
 * submit function with "ng-click"
 * submitting with $http (server : 'https://localhost/server')
-	code :
-	
-	$http.post('http://localhost:1234/angular/', $scope.formData).success(function(data){
-		console.log('server loaded');
-	}).error(function(data){
-		console.log('contact server failed!');
-	});	
+	* code :
+		$http.post('http://localhost:1234/angular/', $scope.formData).success(function(data){
+			console.log('server loaded');
+		}).error(function(data){
+			console.log('contact server failed!');
+		});	
 	
 
