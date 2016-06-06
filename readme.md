@@ -25,5 +25,17 @@
 ##Form Validation 1 (template 2)
 	- update submit form.
 	- change submit with html 5 validation
-	
 
+##Form validation 2 (template 2)
+	- set form name 
+	- set novalidate
+	- show the form data with expression
+	- passing theForm.$valid to $scope controller
+	- set ng-class has-error and has-success from $theForm.email.$valid
+	- set theForm.$pristine
+	- set vaidatioin $theForm.email.$error
+	- set class help-block and ng-show="theForm.email.$error.required" and theForm.email $error.email
+	- set theForm.submitted.
+	
+	
+	
