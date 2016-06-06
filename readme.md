@@ -37,5 +37,20 @@
 	- set class help-block and ng-show="theForm.email.$error.required" and theForm.email $error.email
 	- set theForm.submitted.
 	
+##Angular-auto-validation (add lib)
+	- https://github.com/jonsamwell/angular-auto-validate
+	- include js file to project
+	- Add angular.module as jcs-autoValidate.
+	- pattern for username see http://html5pattern.com/Names
+	- custome pattern with ng-pattern = "/^[a-z\d\.]{5,}$/"
+	- ng-minlenght, min, max, ng-minlength
+	- custome message with : 
+		function(defaultErrorMessageResolver) {
+		  defaultErrorMessageResolver.getErrorMessages().then(function (errorMessages) {
+			  errorMessages['badUsername'] = 'Username can only contain numbers and letters';
+			  errorMessages['tooOld']= 'you must be max {0} years old to use this site'
+			});
+		}
+		example : ng-max-err-type = "tooOld" or ng-pattern-err-type = "badUsername"
 	
 	
