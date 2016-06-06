@@ -11,6 +11,7 @@
 - check on github as example source template
 
 ##Project_1 (template 1)
+	- Intro Form with ng-app and ng-controller
 	- 
 
 
