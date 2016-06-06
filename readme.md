@@ -11,7 +11,8 @@
 - check on github as example source template
 
 ##Project_1 (template 1)
-	- Intro Form with ng-app and ng-controller
-	- 
+	- Setting Module and Controller with "ng-app" and "control"  
+	- ng-model @All field form and show data form with form Expression.
+	- submit function with "ng-click"
 
 
