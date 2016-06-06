@@ -21,5 +21,9 @@
 			}).error(function(data){
 				console.log('contact server failed!');
 			});		
+
+##Form Validation 1 (template 2)
+	- update submit form.
+	- change submit with html 5 validation
 	
 
