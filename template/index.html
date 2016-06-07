@@ -1,23 +1,31 @@
 <!DOCTYPE html >
-<html lang="en" ng-app="myapp" >
+<html lang="en"
+      ng-app="myapp" >
 <head >
-	<title >Lists Of Things</title >
-	<link href="../libs/bootstrap/dist/css/bootstrap.min.css" rel="stylesheet" >
-	<link href="main.css" rel="stylesheet" >
+	<title >Scope</title >
+	<link href="../libs/bootstrap/dist/css/bootstrap.min.css"
+	      rel="stylesheet" >
+	<link href="main.css"
+	      rel="stylesheet" >
 </head >
 
 <body >
-<nav class="navbar navbar-inverse navbar-fixed-top" >
-	<div class="container" >
-		<div class="navbar-header" >
-			<a class="navbar-brand"
-			   href="/" >Lists Of Things
-			</a >
+
+
+<div class="container" >
+
+	<div class="row" >
+		<div class="col-md-6" >
+			<div class="parent"
+			     ng-controller="ParentController" >
+				<label >
+					<input type="text"
+					       ng-model="name" />
+				</label >
+				<p >{{name}}</p >
+			</div >
 		</div >
 	</div >
-</nav >
-
-<div class="container main-content" ng-controller="mycontroller">
 </div >
 
 
