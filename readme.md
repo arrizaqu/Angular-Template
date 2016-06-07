@@ -28,3 +28,27 @@
 			</div>
 		</div>
 	- passing selectedPerson to controller.
+
+##Filter Datatable
+	- create column search by name and email
+		<div class="row" >
+		<div class="col-md-12" >
+			<form class="form-inline well well-sm" >
+				<span class="glyphicon glyphicon-search" ></span >
+					<div class="form-group" >
+						<input type="text"
+							class="form-control"
+								id="name"
+								ng-model="search"
+								placeholder="Search name..."
+						/>
+					</div >
+				</form >
+			</div >
+		</div >
+	- add value "| filter : email"
+
+##Plugin Angular Debug
+	( searching chrome web store)
+		- Angular Batarang 
+		- ng-inspector for angularjs 
