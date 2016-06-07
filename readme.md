@@ -52,5 +52,25 @@
 			});
 		}
 		example : ng-max-err-type = "tooOld" or ng-pattern-err-type = "badUsername"
+	- Ladda button 
+		- http://lab.hakim.se/ladda/
+		- https://github.com/hakimel/Ladda
+	- Include Ladda library on project
+		//css
+		<link href="./libs/ladda/dist/ladda-themeless.min.css" rel="stylesheet" >
+		
+		//javascript
+		<script src="./libs/spin.js/spin.js" ></script >
+		<script src="./libs/ladda/dist/ladda.min.js" ></script >
+		<script src="./libs/angular-ladda/dist/angular-ladda.min.js" ></script >
+	- Add Ladda Module with 'angular-ladda' 	
+		- set attribut ladda = "true" and data-type="expand-right"
+		- set $scope.submitting = false and true, change ladda = "true", submitting
+		- add span ng-show to submit button : 
+			<span ng-show="submitting">Registering</span>
+			<span ng-show="!submitting">Register</span> 
+			
+	
+		
 	
 	
