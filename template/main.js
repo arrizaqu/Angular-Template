@@ -1,5 +1,5 @@
-// This is the sample data for this lesson
-var sample = [
+
+var persons = [
 		{
 			"name": "Gregory Huffman",
 			"email": "Praesent@pedenec.net",
