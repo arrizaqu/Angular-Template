@@ -39,3 +39,19 @@
 	- ng-bind by$watch.
 
 ##Loading with Angular-spinner
+	- install : bower install angular-spinner
+	- load spinner library to html 
+		1. <script src="bower_components/spin.js/spin.js"></script>
+		2. <script src="bower_components/angular-spinner/angular-spinner.js"></script>
+	- Add Depedency 
+		=> 'angularSpinner'
+		=> read Docomentatioin
+	- add spinner css
+		.spinner {
+		  position: relative;
+		  width: 50px;
+		  height: 50px;
+		  margin: 0 auto;
+		  padding: 40px 0; }
+		  .spinner p {
+			margin-top: 20px; }
