@@ -55,3 +55,10 @@
 		  padding: 40px 0; }
 		  .spinner p {
 			margin-top: 20px; }
+
+##AngularStrap
+##ContactResource
+##$q-Service
+##DatePicker
+##TaostMessage
+##BootstrapComponent
