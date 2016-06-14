@@ -70,7 +70,11 @@
 			<span ng-show="submitting">Registering</span>
 			<span ng-show="!submitting">Register</span> 
 			
-	
+
+##Notes : 
+##referency: 
+1. https://hello-angularjs.appspot.com/angularjs-http-service-ajax-post-json-data-code-example => untuk Java
+2. http://tutsnare.com/post-form-data-using-angularjs/ => untuk php 
 		
 	
 	
