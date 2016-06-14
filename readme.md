@@ -66,9 +66,14 @@
 	- Add Ladda Module with 'angular-ladda' 	
 		- set attribut ladda = "true" and data-type="expand-right"
 		- set $scope.submitting = false and true, change ladda = "true", submitting
-		- add span ng-show to submit button : 
-			<span ng-show="submitting">Registering</span>
-			<span ng-show="!submitting">Register</span> 
+		- example: 
+			<button class="btn btn-primary" 
+				ladda="submitting"
+				data-style="expand-right"
+				type="submit">
+				<span ng-show="submitting">Registering</span>
+				<span ng-show="!submitting">Register</span>
+			</button>
 			
 
 ##Notes : 
