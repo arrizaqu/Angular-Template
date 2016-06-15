@@ -1,0 +1,166 @@
+<!DOCTYPE html >
+<html lang="en" ng-app="app" >
+<head >
+	<title >Lists Of Things</title >
+	<link href="../libs/bootstrap/dist/css/bootstrap.min.css" rel="stylesheet" >
+	<link href="../libs/ladda/dist/ladda-themeless.min.css" rel="stylesheet" >
+	<link href="main.css" rel="stylesheet" >
+</head >
+
+<body >
+<nav class="navbar navbar-inverse navbar-fixed-top" >
+	<div class="container" >
+		<div class="navbar-header" >
+			<a class="navbar-brand"
+			   href="/" >Lists Of Things
+			</a >
+		</div >
+	</div >
+</nav >
+
+<div class="container main-content">
+	<div class="row">
+		<div class="col-md-12" >
+			<form class="form-inline well well-sm" >
+				<span class="glyphicon glyphicon-search" ></span >
+
+				<div class="form-group" >
+						<input type="text"
+						       class="form-control"
+						       id="name"
+						       ng-model="search"
+						       placeholder="Search name..."
+								/>
+				</div >
+			</form >
+		</div >
+	</div >
+	
+	<div>
+		<div class="col-md-8" class="row" ng-controller="PersonsListController">
+			<table class="table table-bordered" infinite-scroll="loadMore()" infinite-scroll-distance="0">
+				<thead>
+					<tr>
+						<th>#</th>
+						<th>name</th>
+						<th>email</th>
+						<th>city</th>
+					</tr>
+				</thead>
+				<tbody>
+					<tr ng-repeat="person in contact.persons"
+						ng-style="{
+							'background-color': person.email == contact.selectedPerson.email ? 'silver' : ''
+						}"
+						ng-click = "contact.selectedPerson = person"
+					>
+						<td>{{$index}}</td>
+						<td>{{person.name}}</td>
+						<td>{{person.email}}</td>
+						<td>{{person.city}}</td>
+					</tr>
+				</tbody>
+			</table >
+			
+			<div ng-show="contact.persons.length == 0 && !contacts.isLoading" >
+						<div class="alert alert-info" >
+							<p class="text-center" >No results found for search term '{{ search }}'</p >
+						</div >
+					</div >
+			
+			<div class="spinner" ng-show="contact.isLoading">
+				<span us-spinner="{radius:20, width:8, length: 16}"></span>
+				<p>loading...</p>
+			</div>
+			
+		</div >
+		<div class="col-md-4" ng-controller = "PersonDetailController">
+			<div class="panel panel-default" >
+				<div class="panel-heading" >Details
+					<button class="btn btn-danger btn-sm pull-right"
+						ladda="contact.isDeleting"
+						ng-click="remove()" >Delete
+					</button >
+					<div class="clearfix" ></div >
+				</div>
+				<form ng-submit="save()" novalidate="novalidate">
+					<div class="form-group" >
+						<label class="col-sm-2 control-label" >Name</label >
+						<div class="col-sm-10" >
+							<input type="text"
+								   class="form-control"
+								   name="name"
+								   ng-model="contact.selectedPerson.name"
+								   required />
+						</div >
+					</div >
+					<div class="form-group" >
+						<label class="col-sm-2 control-label" >Email</label >
+						<div class="col-sm-10" >
+							<input type="email"
+								   name="email"
+								   class="form-control"
+								   ng-model="contact.selectedPerson.email"
+								   required />
+						</div >
+					</div >
+
+					<div class="form-group" >
+						<label class="col-sm-2 control-label" >Address</label >
+						<div class="col-sm-10" >
+							<input type="text"
+								   name="address"
+								   class="form-control"
+								   ng-model="contact.selectedPerson.address"
+									/>
+						</div >
+
+					</div >
+
+					<div class="form-group" >
+						<label class="col-sm-2 control-label" >City</label >
+						<div class="col-sm-10" >
+							<input type="text"
+								   name="city"
+								   class="form-control"
+								   ng-model="contact.selectedPerson.city"
+									/>
+						</div >
+
+					</div >
+					<div class="form-group" >
+						<label class="col-sm-2 control-label" >Country</label >
+						<div class="col-sm-10" >
+							<input type="text"
+								   name="country"
+								   class="form-control"
+								   ng-model="contact.selectedPerson.country"
+									/>
+						</div >
+
+					</div >
+					<div class="buttons" >
+						<button class="btn btn-primary btn-block"
+								ladda="contact.isSaving"
+								type="submit" >Save
+						</button >
+					</div >	
+				</div >	
+			</form>
+		</div>
+	</div >
+</div >
+
+
+<script src="../libs/angular/angular.min.js" ></script >
+<script src="../libs/angular-resource/angular-resource.min.js" ></script >
+<script src="../libs/ngInfiniteScroll/build/ng-infinite-scroll.min.js" ></script >
+<script src="../libs/spin.js/spin.min.js" ></script >
+<script src="../libs/angular-spinner/angular-spinner.min.js" ></script >
+<script src="../libs/angular-auto-validate/dist/jcs-auto-validate.js" ></script >
+<script src="../libs/ladda/dist/ladda.min.js" ></script >
+<script src="../libs/angular-ladda/dist/angular-ladda.js" ></script >
+
+<script src="main.js"></script >
+</body >
+</html >

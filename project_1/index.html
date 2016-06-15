@@ -1,0 +1,54 @@
+<!DOCTYPE html >
+<html lang="en" ng-app="myapp">
+<head >
+	<title >Form Submission</title >
+	<link href="../libs/bootstrap/dist/css/bootstrap.min.css" rel="stylesheet" >
+</head >
+
+<body >
+	<div id="container" class="container" ng-controller="mycontroller">
+		<form ng-submit="onSubmit(theForm.$valid)" name="theForm" novalidate="novalidate">
+		  <div class="form-group" ng-class="{
+			'has-error' : !theForm.email.$valid && (!theForm.password.$pristine || theForm.$submitted),
+			'has-success' : theForm.email.$valid && (!theForm.password.$pristine || theForm.$submitted)
+		  }">
+		  
+			<label for="person.email">Email address</label>
+			<input name="email" type="email" required="required" class="form-control" ng-model="person.email" name="person.email" id="person.email" placeholder="Email">
+			<p class="help-block" ng-show="theForm.email.$error.required && (!theForm.password.$pristine || theForm.$submitted)">
+				Maaf Email tidak boleh kosong
+			</p>
+			<p class="help-block" ng-show="theForm.email.$error.email && (!theForm.password.$pristine || theForm.$submitted)">
+				Maaf Email yang anda masukkan tidak valid
+			</p>
+			
+		<!-- 	<p>
+				<pre>validation : {{ theForm.email.$error.required}}</pre>
+				<pre>email valid : {{ theForm.email.$valid}}</pre>
+				<pre>email dirty : {{ theForm.email.$dirty}}</pre>
+				<pre>email pristine : {{ theForm.email.$pristine}}</pre>
+			</p> -->
+		  </div>
+		  <div class="form-group" ng-class="{
+			'has-error' : !theForm.password.$valid && (!theForm.password.$pristine || theForm.$submitted),
+			'has-success' : theForm.passowrd.$valid && (!theForm.password.$pristine || theForm.$submitted)
+		  }">
+			<label for="person.password">Password</label>
+			<input name="password" type="password" required class="form-control" ng-model="person.password" id="person.password" placeholder="Password">
+			<p class="help-block" ng-show="theForm.password.$error.required && (!theForm.password.$pristine || theForm.$submitted)">
+				Maaf Password email harus diisi.!!
+			</p>
+		  </div>
+		  <div class="form-group">
+			<label for="person.gender">gender</label><br/>
+			Pria : <input type="radio" ng-model="person.gender" name="person.gender" value="p" id="person.gender" />
+			wanita : <input type="radio" ng-model="person.gender" name="person.gender" value="w" id="person.gender" />
+		  </div>
+		  <button type="submit"  class="btn btn-default">Submit</button>
+		</form>
+	</div>
+</div >
+<script src="../libs/angular/angular.min.js" ></script >
+<script src="main.js" ></script >
+</body >
+</html >

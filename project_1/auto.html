@@ -1,0 +1,50 @@
+<!DOCTYPE html >
+<html lang="en" ng-app="myapp">
+<head >
+	<title >Form Submission</title >
+	<link href="../libs/bootstrap/dist/css/bootstrap.min.css" rel="stylesheet" >
+	<link href="../libs/ladda/dist/ladda-themeless.min.css" rel="stylesheet" >
+</head >
+
+<body >
+	<div id="container" class="container" ng-controller="mycontroller">
+		<form ng-submit="onSubmit(theForm.$valid)" name="theForm" novalidate="novalidate">
+		  <div class="form-group">
+			<label for="person.email">Email address</label>
+			<input name="email" type="email" required="required" class="form-control" ng-model="person.email" name="person.email" id="person.email" placeholder="Email">
+		<!-- 	<p>
+				<pre>validation : {{ theForm.email.$error.required}}</pre>
+				<pre>email valid : {{ theForm.email.$valid}}</pre>
+				<pre>email dirty : {{ theForm.email.$dirty}}</pre>
+				<pre>email pristine : {{ theForm.email.$pristine}}</pre>
+			</p> -->
+		  </div>
+		  <div class="form-group" >
+			<label for="person.password">Password</label>
+			<input 
+			ng-pattern-err-type="badPassword"
+			ng-pattern = "/^(?=.*\d)(?=.*[a-z])(?=.*[A-Z])(?!.*\s).*$/" name="password" type="password" required class="form-control" ng-model="person.password" id="person.password" placeholder="Password">
+		  </div>
+		  <div class="form-group">
+			<label for="person.gender">gender</label><br/>
+			Pria : <input type="radio" ng-model="person.gender" name="person.gender" value="p" id="person.gender" />
+			wanita : <input type="radio" ng-model="person.gender" name="person.gender" value="w" id="person.gender" />
+		  </div>
+			<button class="btn btn-primary" 
+				ladda="submitting"
+				data-style="expand-right"
+				type="submit">
+				<span ng-show="submitting">Registering</span>
+				<span ng-show="!submitting">Register</span>
+			</button>
+		 </form>
+	</div>
+</div >
+<script src="../libs/angular/angular.min.js" ></script >
+<script src="../libs/angular-auto-validate/dist/jcs-auto-validate.min.js" ></script >
+<script src="../libs/spin.js/spin.js" ></script >
+<script src="../libs/ladda/js/ladda.js" ></script >
+<script src="../libs/angular-ladda/dist/angular-ladda.min.js" ></script >
+<script src="main.js" ></script >
+</body >
+</html >
